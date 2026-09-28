@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Head stage</title>
+<style>html,body{margin:0;height:100%;background:#000;overflow:hidden}canvas{width:100vw;height:100vh;display:block}</style>
+<script type="importmap">{ "imports": { "three": "../../js/vendor/three/three.module.min.js" } }</script>
+</head>
+<body>
+<canvas id="c"></canvas>
+<script type="module">
+// Deterministic render of the hero scene for review.
+// ?t=4.2 (seconds)  ?mx=0.3&my=0.1 (look)  ?glass=0.35  ?x=0  ?turn=0  ?side=0&edge=0.5
+import { createHeadScene } from '../../js/head/scene.js';
+const qs = new URLSearchParams(location.search);
+const num = (k, d) => (qs.has(k) ? +qs.get(k) : d);
+const s = await createHeadScene(document.getElementById('c'), { modelUrl: '../../assets/3d/head.glb', manual: !qs.has('live'), maxDpr: 1 });
+s.setTarget({ x: num('x', 0), turn: num('turn', 0), glass: num('glass', 0.35), glassHead: num('glassHead', 0.15),
+  glassSide: num('side', 0), glassEdge: num('edge', 0.5), zoom: num('zoom', 1) });
+Object.assign(s.state.cur, s.state.target);
+s.state.lock = qs.has('live') ? null : { x: num('mx', 0), y: num('my', 0) };
+s.state.mouse.set(num('mx', 0), num('my', 0));
+if (qs.has('live')) { s.play(); setTimeout(() => (window.__done = true), 5000); }
+else { s.renderAt(num('t', 4)); window.__done = true; }
+window.__scene = s;
+</script>
+</body>
+</html>

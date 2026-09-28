@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none">
+  <title>JR</title>
+  <!-- J -->
+  <path fill="#e8ecff" d="M5 6h17v6h-5.5v19.5c0 5-3.3 8.5-8.3 8.5H5v-6h3c1.6 0 2.5-1 2.5-2.7V12H5z"/>
+  <!-- R -->
+  <path fill="#e8ecff" d="M25 6h11.5c5.3 0 8.5 3.3 8.5 8.2 0 3.8-1.9 6.5-5.1 7.6L46 40h-6.6l-5.4-17.2H31V40h-6zm6 5.6v5.8h5c1.8 0 2.9-1.1 2.9-2.9s-1.1-2.9-2.9-2.9z"/>
+  <!-- accent -->
+  <rect x="5" y="41" width="8" height="3" fill="#ff3b1f"/>
+</svg>

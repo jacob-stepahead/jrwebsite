@@ -1,27 +1,29 @@
 /* ==========================================================================
-   Jacob Rafiy - Personal Website
-   Professional yet fun, with visual polish
+   Jacob Rafiy - shared styles for the inner pages
+   Dark, cinematic system shared with the homepage (css/home.css)
    ========================================================================== */
 
-/* Google Fonts - Fraunces (fun serif) + DM Sans (friendly sans) */
-@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=DM+Sans:ital,wght@0,400;0,500;1,400&display=swap');
+@import url('fonts.css');
 
 /* ==========================================================================
    CSS Custom Properties (Design Tokens)
    ========================================================================== */
 
 :root {
-  /* Colors - warmer palette with accent */
-  --color-bg: #fffcf8;
-  --color-bg-card: #ffffff;
-  --color-text: #2d2a26;
-  --color-text-secondary: #6b6560;
-  --color-accent: #c45d3a;
-  --color-accent-light: #f0e6e0;
-  --color-border: #e8e4df;
-  --color-border-strong: #d4cfc8;
+  /* Colors */
+  --color-bg: #05060d;
+  --color-bg-card: rgba(11, 13, 25, 0.78);
+  --color-text: #e8ecff;
+  --color-text-secondary: #a3abc4;
+  --color-accent: #ff4424;
+  --color-accent-hover: #ff7a55;
+  --color-accent-light: rgba(255, 68, 36, 0.14);
+  --color-violet: #8d93ff;
+  --color-border: rgba(232, 236, 255, 0.1);
+  --color-border-strong: rgba(232, 236, 255, 0.18);
 
   /* Typography */
+  --font-display: 'Antonio', 'Arial Narrow', Impact, sans-serif;
   --font-serif: 'Fraunces', Georgia, serif;
   --font-sans: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 
@@ -30,7 +32,7 @@
   --text-base: 1.0625rem; /* 17px */
   --text-lg: 1.125rem;    /* 18px */
   --text-xl: 1.5rem;      /* 24px */
-  --text-2xl: 2.25rem;    /* 36px */
+  --text-2xl: clamp(2.4rem, 1.8rem + 2.4vw, 3.6rem);
 
   /* Spacing (8px base) */
   --space-1: 0.5rem;   /* 8px */
@@ -44,7 +46,7 @@
   --space-12: 6rem;    /* 96px */
 
   /* Layout */
-  --max-width: 720px;
+  --max-width: 760px;
   --max-width-wide: 1100px;
 
   /* Transitions */
@@ -63,6 +65,7 @@ html {
   font-size: 16px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: var(--color-bg);
 }
 
 body {
@@ -71,10 +74,29 @@ body {
   font-family: var(--font-sans);
   font-size: var(--text-base);
   font-weight: 400;
-  line-height: 1.65;
+  line-height: 1.7;
   color: var(--color-text);
   background-color: var(--color-bg);
+  min-height: 100vh;
+  position: relative;
 }
+
+/* Ember and violet glow at the top of every page, behind reeded glass. */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.022) 0 1px, transparent 1px 12px),
+    radial-gradient(60% 45% at 50% -8%, rgba(141, 147, 255, 0.22), transparent 70%),
+    radial-gradient(45% 35% at 85% 0%, rgba(255, 68, 36, 0.16), transparent 70%),
+    var(--color-bg);
+}
+
+::selection { background: var(--color-accent); color: #fff; }
+:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 3px; border-radius: 4px; }
 
 /* ==========================================================================
    Layout - Full width nav, contained content
@@ -83,10 +105,27 @@ body {
 .site-header {
   max-width: var(--max-width-wide);
   margin: 0 auto;
-  padding: var(--space-5) var(--space-4);
+  padding: var(--space-4) var(--space-4) var(--space-3);
   display: flex;
   justify-content: center;
+  align-items: center;
+  gap: var(--space-3);
+  position: relative;
 }
+
+.site-logo {
+  position: absolute;
+  left: var(--space-4);
+  top: 50%;
+  transform: translateY(-40%);
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border: none !important;
+}
+
+.site-logo img { width: 28px; height: 28px; display: block; }
 
 .container {
   max-width: var(--max-width);
@@ -99,47 +138,60 @@ body {
   padding-bottom: var(--space-12);
 }
 
-/* Main content card with border */
+/* Main content card */
 .content-card {
   background: var(--color-bg-card);
-  border: 1px solid var(--color-border-strong);
-  border-radius: 8px;
+  border: 1px solid var(--color-border);
+  border-radius: 18px;
   padding: var(--space-6);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
 
 /* ==========================================================================
-   Navigation - Top Right
+   Navigation
    ========================================================================== */
 
 .nav-list {
   list-style: none;
   margin: 0;
-  padding: 0;
+  padding: 0.35rem;
   display: flex;
-  gap: var(--space-6);
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.2rem;
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  background: rgba(8, 9, 18, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
 }
 
 .nav-link {
+  display: block;
   font-family: var(--font-sans);
-  font-size: var(--text-lg);
-  font-weight: 500;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
   color: var(--color-text-secondary);
   text-decoration: none;
-  letter-spacing: 0.02em;
-  transition: color var(--transition-fast);
+  padding: 0.6rem 1rem;
+  border-radius: 999px;
   border-bottom: none;
-  padding-bottom: 2px;
+  transition: color var(--transition-fast), background var(--transition-fast);
 }
 
 .nav-link:hover {
-  color: var(--color-accent);
+  color: var(--color-text);
   border-bottom: none;
 }
 
 .nav-link.active {
-  color: var(--color-accent);
-  border-bottom: 2px solid var(--color-accent);
+  color: var(--color-text);
+  background: rgba(232, 236, 255, 0.08);
+  border-bottom: none;
 }
 
 /* ==========================================================================
@@ -180,7 +232,8 @@ body {
 }
 
 .header-details a:hover {
-  border-bottom-color: var(--color-accent);
+  color: var(--color-accent-hover);
+  border-bottom-color: var(--color-accent-hover);
 }
 
 /* ==========================================================================
@@ -189,9 +242,9 @@ body {
 
 h1, h2, h3 {
   font-family: var(--font-serif);
-  font-weight: 600;
-  line-height: 1.3;
-  letter-spacing: -0.02em;
+  font-weight: 500;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
   color: var(--color-text);
 }
 
@@ -228,7 +281,7 @@ p {
   margin: var(--space-5) 0;
   border: none;
   height: 1px;
-  background: linear-gradient(to right, var(--color-accent), var(--color-border), transparent);
+  background: linear-gradient(to right, var(--color-accent), var(--color-violet) 40%, transparent);
 }
 
 /* ==========================================================================
@@ -243,7 +296,8 @@ a {
 }
 
 a:hover {
-  border-bottom-color: var(--color-accent);
+  color: var(--color-accent-hover);
+  border-bottom-color: var(--color-accent-hover);
 }
 
 /* ==========================================================================
@@ -251,11 +305,13 @@ a:hover {
    ========================================================================== */
 
 .page-title {
-  font-family: var(--font-serif);
+  font-family: var(--font-display);
   font-size: var(--text-2xl);
   font-weight: 600;
+  text-transform: uppercase;
+  line-height: 0.95;
   margin: 0 0 var(--space-5) 0;
-  letter-spacing: -0.02em;
+  letter-spacing: 0.005em;
   padding-bottom: var(--space-4);
   border-bottom: 1px solid var(--color-border);
 }
@@ -288,9 +344,12 @@ a:hover {
 }
 
 .item-title {
-  font-family: var(--font-serif);
-  font-size: var(--text-xl);
+  font-family: var(--font-display);
+  font-size: 1.9rem;
   font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.01em;
+  line-height: 1.05;
   margin: 0;
 }
 
@@ -317,7 +376,7 @@ a:hover {
 }
 
 .item-title a.external-link:hover {
-  color: #a84d2f;
+  color: var(--color-accent-hover);
 }
 
 .item-meta {
@@ -507,12 +566,13 @@ a:hover {
 
 /* Writing category header */
 .writing-category {
-  font-family: var(--font-serif);
-  font-size: 1.75rem;
+  font-family: var(--font-display);
+  font-size: 2.2rem;
   font-weight: 600;
+  text-transform: uppercase;
   color: var(--color-text);
   margin: 0 0 var(--space-4) 0;
-  letter-spacing: -0.02em;
+  letter-spacing: 0.01em;
   text-align: center;
 }
 
@@ -541,7 +601,20 @@ a:hover {
 
   .site-header {
     justify-content: center;
-    padding: var(--space-3) var(--space-3);
+    padding: var(--space-3) var(--space-2) var(--space-2);
+    flex-direction: column;
+    gap: var(--space-2);
+  }
+
+  .site-logo {
+    position: static;
+    transform: none;
+  }
+
+  .nav-link {
+    padding: 0.5rem 0.65rem;
+    font-size: 0.68rem;
+    letter-spacing: 0.1em;
   }
 
   .content-card {
@@ -557,6 +630,6 @@ a:hover {
   }
 
   .nav-list {
-    gap: var(--space-3);
+    border-radius: 22px;
   }
 }

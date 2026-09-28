@@ -2,73 +2,259 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>Jacob Rafiy</title>
-  <meta name="description" content="Jacob Rafiy - Economics and Philosophy at the University of Michigan. Building, investing, and writing.">
-  <link rel="stylesheet" href="css/styles.css">
+  <meta name="description" content="Jacob Rafiy: builder, investor and writer. Economics and Philosophy at the University of Michigan.">
+  <meta name="theme-color" content="#05060d">
+  <link rel="icon" type="image/svg+xml" href="assets/img/logo.svg">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Jacob Rafiy">
+  <meta property="og:description" content="Builder, investor and writer. Options, angles, next moves.">
+  <meta property="og:image" content="https://jacobrafiy.com/assets/img/og-image.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preload" href="assets/3d/head.glb" as="fetch" type="model/gltf-binary" crossorigin>
+  <link rel="preload" href="fonts/antonio-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/fonts.css">
+  <link rel="stylesheet" href="css/home.css">
+  <script type="importmap">
+    { "imports": { "three": "./js/vendor/three/three.module.min.js" } }
+  </script>
 </head>
-<body>
-  <header class="site-header">
-    <nav>
-      <ul class="nav-list">
-        <li><a href="index.html" class="nav-link active">About</a></li>
-        <li><a href="projects.html" class="nav-link">Projects</a></li>
-        <li><a href="ai-portfolio.html" class="nav-link">AI Portfolio</a></li>
-        <li><a href="podcast.html" class="nav-link">Podcast</a></li>
-        <li><a href="writing.html" class="nav-link">Writing</a></li>
-        <li><a href="chat.html" class="nav-link">jacob.ai</a></li>
-      </ul>
-    </nav>
-  </header>
+<body class="is-loading">
+  <a class="skip-link" href="#about">Skip to content</a>
 
-  <div class="container">
-    <main class="page">
-      <div class="content-card">
-        <header class="header-block">
-          <h1 class="header-name">Jacob Rafiy</h1>
-          <div class="header-details">
-            <p>Born and Raised in New York City</p>
-            <p>University of Michigan, Class of 2026</p>
-            <p>Economics and Philosophy</p>
-            <p><a href="mailto:jhrafiy@gmail.com">jhrafiy@gmail.com</a></p>
-            <p><a href="https://www.linkedin.com/in/jacob-rafiy/">linkedin.com/in/jacob-rafiy</a></p>
-          </div>
-        </header>
-
-        <article class="about-content">
-          <p>Detained in a back room of Noi Bai International Airport with an expired visa, no cash, a debit card that doesn't work, and three Vietnamese security officials yelling at me.</p>
-
-          <p>My flight to Australia had been canceled and rebooked. The rebooking pushed me two days past my visa's expiration. They needed 1,300,000 Dong (~$50 USD) to let me through. Cash only. I didn't have it. I had 30 minutes to figure it out.</p>
-
-          <p>I stepped away and stood in the middle of the terminal. Fluorescent lights. Announcements in Vietnamese I didn't understand. I ran through the options. No cash. Card doesn't work. Nobody to contact. I ran around the airport trying to find someone who could help. Nothing worked. It seemed hopeless.</p>
-
-          <p>Then I remembered: I had a crypto hot wallet with Bitcoin on my phone.</p>
-
-          <p>I ran up frantically to strangers. "Hey, I have Bitcoin and I need $50 cash. I'll send you $60 in Bitcoin right now." They stared blankly at me like I was running an obvious scam. Everyone brushed me away. I kept going.</p>
-
-          <p>Eventually, a taxi driver I spoke to referred me to another taxi driver who referred me to a shady guy sitting on a bench. He said yes. We did the transfer standing outside the terminal, motorcycles blaring and cigarette smoke everywhere. I walked back to the counter, paid the bribe, got through security, and made my flight.</p>
-
-          <p>What I remember most isn't the relief. It's that I wasn't scared. The whole time, my brain was just running. Options, angles, next moves. It felt familiar. Like a game I'd been playing since I was a kid. I enjoyed it.</p>
-
-          <hr class="section-break">
-
-          <p>That instinct appeared early.</p>
-
-          <p>In elementary school, I wanted the new Derrick Rose basketball shoes. My parents said no. I decided I was going to get them. I started reselling snacks to classmates. By the time I'd saved enough, I didn't buy the shoes. The game was far more interesting than the prize.</p>
-
-          <p>At 16, I noticed my cousin couldn't get exercise equipment. COVID had decimated supply chains. I did some research and found the same pattern everywhere—demand spiking, supply frozen. Starting with $2,500 I'd made from previous ventures, I scaled JHR Commodities to six figures in revenue within 6 months. I resold everything I could find: patio heaters, swimming pools, video game consoles, Nvidia GPUs, Pokémon cards, shoes, NFTs. After documenting my research and flips, a 1,500-member reseller community recruited me as a salaried consultant. I was 17.</p>
-
-          <p>Last summer, I founded Spartanconsulting.ai, an AI consultancy for small businesses. I'm not technical. I tried building solutions myself and quickly hit a wall. I pivoted, recruited a technical co-founder, and eventually scaled the team to seven. I sourced clients, diagnosed their problems, designed solutions with the technical team, and delivered. We're on track to generate $128K+ in client value this year.</p>
-
-          <p>Outside of work and school, I have solo-traveled through Vietnam, Taiwan, and South Korea with no itinerary or hotels. Just a backpack and a plane ticket. I scuba dive and freedive. I read and write a lot, and I co-host a podcast with a close friend where we talk about philosophy, self-improvement, books, and whatever else we're enjoying.</p>
-
-          <p class="contact-line">I like meeting people. If any of this is interesting, reach out.<br>
-          <a href="mailto:jhrafiy@gmail.com">jhrafiy@gmail.com</a></p>
-        </article>
-      </div>
-    </main>
+  <!-- Loader -->
+  <div class="loader" aria-hidden="true">
+    <img src="assets/img/logo.svg" alt="" class="loader__logo" width="56" height="56">
+    <div class="loader__bar"><span></span></div>
   </div>
 
-  <script src="js/chat-widget.js"></script>
+  <!-- 3D stage (fixed behind the content) -->
+  <div class="stage" aria-hidden="true">
+    <canvas id="head-canvas"></canvas>
+    <img class="stage__poster" src="assets/img/head-poster.jpg" alt="">
+    <div class="stage__dim"></div>
+  </div>
+
+  <div class="cursor" aria-hidden="true"><span class="cursor__dot"></span></div>
+
+  <main id="content">
+    <!-- 1. Hero -->
+    <section id="home" class="section section--hero" data-scene='{"x":0,"glass":0.28,"glassHead":0.12,"side":-1,"edge":1.1,"dim":0}'>
+      <div class="hero__top">
+        <p class="label">Builder <span class="sep">/</span> Investor <span class="sep">/</span> Writer</p>
+        <p class="label hero__place">New York City <span class="sep">&rarr;</span> Ann Arbor</p>
+      </div>
+      <div class="hero__bottom">
+        <h1 class="hero__name"><span>Jacob</span> <span>Rafiy</span></h1>
+        <p class="hero__sub">Economics &amp; Philosophy, University of Michigan &rsquo;26</p>
+      </div>
+      <a class="hero__scroll label" href="#statement">Scroll <span class="hero__scroll-line"></span></a>
+    </section>
+
+    <!-- 2. Statement: glass slides over the left half, the head moves right -->
+    <section id="statement" class="section section--statement" data-scene='{"x":0.2,"glass":0.95,"glassHead":0.35,"side":-1,"edge":0.52,"dim":0.1}'>
+      <div class="statement">
+        <h2 class="display statement__title" data-reveal>
+          <span>Options.</span>
+          <span>Angles.</span>
+          <span>Next moves.</span>
+        </h2>
+        <p class="statement__tag serif" data-reveal>A game I&rsquo;ve been playing since I was a kid.<br>The game is more interesting than the prize.</p>
+      </div>
+    </section>
+
+    <!-- 3. Story -->
+    <section id="about" class="section section--about" data-scene='{"x":-0.26,"y":0.1,"glass":0.9,"glassHead":0.3,"side":1,"edge":0.46,"dim":0.35}'>
+      <div class="about">
+        <div class="about__left">
+          <div class="about__sticky">
+            <h2 class="display about__title" data-reveal>The Game</h2>
+            <p class="about__kicker serif" data-reveal>And how I learned to play it.</p>
+            <div class="about__buttons" data-reveal>
+              <a class="btn" href="#contact">Contact me <span aria-hidden="true">&darr;</span></a>
+              <a class="btn" href="https://www.linkedin.com/in/jacob-rafiy/" target="_blank" rel="noopener">LinkedIn <span aria-hidden="true">&nearr;</span></a>
+            </div>
+          </div>
+        </div>
+        <article class="about__story">
+          <p class="lede" data-reveal>Detained in a back room of Noi Bai International Airport with an expired visa, no cash, a debit card that doesn&rsquo;t work, and three Vietnamese security officials yelling at me.</p>
+
+          <p data-reveal>My flight to Australia had been canceled and rebooked. The rebooking pushed me two days past my visa&rsquo;s expiration. They needed 1,300,000 Dong (~$50 USD) to let me through. Cash only. I didn&rsquo;t have it. I had 30 minutes to figure it out.</p>
+
+          <p data-reveal>I stepped away and stood in the middle of the terminal. Fluorescent lights. Announcements in Vietnamese I didn&rsquo;t understand. I ran through the options. No cash. Card doesn&rsquo;t work. Nobody to contact. I ran around the airport trying to find someone who could help. Nothing worked. It seemed hopeless.</p>
+
+          <p data-reveal>Then I remembered: I had a crypto hot wallet with Bitcoin on my phone.</p>
+
+          <p data-reveal>I ran up frantically to strangers. &ldquo;Hey, I have Bitcoin and I need $50 cash. I&rsquo;ll send you $60 in Bitcoin right now.&rdquo; They stared blankly at me like I was running an obvious scam. Everyone brushed me away. I kept going.</p>
+
+          <p data-reveal>Eventually, a taxi driver I spoke to referred me to another taxi driver who referred me to a shady guy sitting on a bench. He said yes. We did the transfer standing outside the terminal, motorcycles blaring and cigarette smoke everywhere. I walked back to the counter, paid the bribe, got through security, and made my flight.</p>
+
+          <p data-reveal>What I remember most isn&rsquo;t the relief. It&rsquo;s that I wasn&rsquo;t scared. The whole time, my brain was just running. Options, angles, next moves. It felt familiar. Like a game I&rsquo;d been playing since I was a kid. I enjoyed it.</p>
+
+          <p class="about__break" aria-hidden="true">&mdash;</p>
+
+          <p class="lede" data-reveal>That instinct appeared early.</p>
+
+          <p data-reveal>In elementary school, I wanted the new Derrick Rose basketball shoes. My parents said no. I decided I was going to get them. I started reselling snacks to classmates. By the time I&rsquo;d saved enough, I didn&rsquo;t buy the shoes. The game was far more interesting than the prize.</p>
+
+          <p data-reveal>At 16, I noticed my cousin couldn&rsquo;t get exercise equipment. COVID had decimated supply chains. I did some research and found the same pattern everywhere&mdash;demand spiking, supply frozen. Starting with $2,500 I&rsquo;d made from previous ventures, I scaled JHR Commodities to six figures in revenue within 6 months. I resold everything I could find: patio heaters, swimming pools, video game consoles, Nvidia GPUs, Pok&eacute;mon cards, shoes, NFTs. After documenting my research and flips, a 1,500-member reseller community recruited me as a salaried consultant. I was 17.</p>
+
+          <p data-reveal>Last summer, I founded Spartanconsulting.ai, an AI consultancy for small businesses. I&rsquo;m not technical. I tried building solutions myself and quickly hit a wall. I pivoted, recruited a technical co-founder, and eventually scaled the team to seven. I sourced clients, diagnosed their problems, designed solutions with the technical team, and delivered. We&rsquo;re on track to generate $128K+ in client value this year.</p>
+
+          <p data-reveal>Outside of work and school, I have solo-traveled through Vietnam, Taiwan, and South Korea with no itinerary or hotels. Just a backpack and a plane ticket. I scuba dive and freedive. I read and write a lot, and I co-host a podcast with a close friend where we talk about philosophy, self-improvement, books, and whatever else we&rsquo;re enjoying.</p>
+
+          <p class="about__cta" data-reveal>I like meeting people. If any of this is interesting, <a href="#contact">reach out</a>.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- 4. Kinetic type -->
+    <section id="build" class="section section--build" data-scene='{"x":0,"glass":1,"glassHead":0.55,"side":1,"edge":-0.1,"dim":0.72}'>
+      <div class="build" data-build>
+        <span class="build__small build__small--a serif">I build</span>
+        <h2 class="display build__lines" aria-label="I build AI systems, companies, arguments and conversations, for people.">
+          <span class="build__line">AI systems</span>
+          <span class="build__line">Companies</span>
+          <span class="build__line">Arguments</span>
+          <span class="build__line">Conversations</span>
+        </h2>
+        <span class="build__small build__small--b serif">and mostly,</span>
+        <span class="build__small build__small--c serif">for people.</span>
+      </div>
+    </section>
+
+    <!-- 5. Work -->
+    <section id="work" class="section section--work" data-scene='{"x":0,"glass":1,"glassHead":0.5,"side":1,"edge":-0.1,"dim":1}'>
+      <div class="work">
+        <h2 class="work__title display" data-reveal>Work that compounds.</h2>
+
+        <div class="work__divider" data-reveal><span>Ventures</span></div>
+        <div class="cards cards--two">
+          <a class="card card--spartan" href="projects.html#spartan" data-reveal>
+            <span class="card__meta">Founder &middot; 2025 &ndash; present</span>
+            <h3 class="card__title">Spartan<wbr>consulting<span class="hl">.ai</span></h3>
+            <p class="card__text">An AI consultancy for small businesses. Scaled from one person to a team of seven; on track for <strong>$128K+</strong> in client value.</p>
+            <span class="card__arrow" aria-hidden="true">&nearr;</span>
+          </a>
+          <a class="card card--jhr" href="projects.html#jhr" data-reveal>
+            <span class="card__meta">Founder &middot; 2020 &ndash; present</span>
+            <h3 class="card__title">JHR Commodities</h3>
+            <p class="card__text">Started at 16 with <strong>$2,500</strong>. Turned supply-chain chaos into <strong>$250K+</strong> in revenue, then a paid consulting seat at 17.</p>
+            <span class="card__arrow" aria-hidden="true">&nearr;</span>
+          </a>
+        </div>
+
+        <div class="work__divider" data-reveal><span>Builds &amp; brand</span></div>
+        <div class="cards cards--three">
+          <a class="card" href="ai-portfolio.html" data-reveal>
+            <span class="card__meta">2026 &middot; PWA</span>
+            <h3 class="card__title">BIGWOP</h3>
+            <p class="card__text">A serious cognitive training system: arithmetic, dual n-back, Claude-powered decision drills, spaced repetition.</p>
+            <span class="card__arrow" aria-hidden="true">&nearr;</span>
+          </a>
+          <a class="card" href="ai-portfolio.html" data-reveal>
+            <span class="card__meta">2026 &middot; Cloudflare + Claude</span>
+            <h3 class="card__title">Daily AI Briefing</h3>
+            <p class="card__text">Twelve hand-picked feeds, filtered for real signal, in my inbox at 9&nbsp;AM.</p>
+            <span class="card__arrow" aria-hidden="true">&nearr;</span>
+          </a>
+          <a class="card" href="ai-portfolio.html" data-reveal>
+            <span class="card__meta">2026 &middot; Pipeline</span>
+            <h3 class="card__title">Startup Sieve</h3>
+            <p class="card__text">1,000+ startups across top VC portfolios, scored programmatically to find where I&rsquo;d learn the most.</p>
+            <span class="card__arrow" aria-hidden="true">&nearr;</span>
+          </a>
+          <a class="card" href="projects.html#happy-dad" data-reveal>
+            <span class="card__meta">Brand ambassador &middot; 2025</span>
+            <h3 class="card__title">Happy Dad</h3>
+            <p class="card__text">Got it stocked in Ann Arbor bars and into fraternities, one conversation at a time.</p>
+            <span class="card__arrow" aria-hidden="true">&nearr;</span>
+          </a>
+          <a class="card" href="chat.html" data-reveal>
+            <span class="card__meta">Chat</span>
+            <h3 class="card__title">jacob<span class="hl">.ai</span></h3>
+            <p class="card__text">Ask an AI version of me anything about my work, my writing, or what I&rsquo;m thinking about.</p>
+            <span class="card__arrow" aria-hidden="true">&nearr;</span>
+          </a>
+          <a class="card" href="projects.html" data-reveal>
+            <span class="card__meta">Everything</span>
+            <h3 class="card__title">All projects</h3>
+            <p class="card__text">Ventures, brand work, and this website.</p>
+            <span class="card__arrow" aria-hidden="true">&nearr;</span>
+          </a>
+        </div>
+
+        <div class="work__divider" data-reveal><span>Writing &amp; talk</span></div>
+        <div class="cards cards--two">
+          <a class="card card--writing" href="writing.html" data-reveal>
+            <span class="card__meta">Essays</span>
+            <h3 class="card__title">Writing</h3>
+            <p class="card__text">Kant, Hume, Descartes, Aristotle, Socrates, Nietzsche, and a guide to propositional and modal logic.</p>
+            <span class="card__arrow" aria-hidden="true">&nearr;</span>
+          </a>
+          <a class="card card--podcast" href="podcast.html" data-reveal>
+            <span class="card__meta">Podcast</span>
+            <h3 class="card__title">Friend Sharpens Friend</h3>
+            <p class="card__text">An aerospace engineer from Portugal and a philosopher from NYC, sharpening each other&rsquo;s thinking every week.</p>
+            <span class="card__arrow" aria-hidden="true">&nearr;</span>
+          </a>
+        </div>
+
+        <div class="beyond" data-reveal>
+          <h2 class="display beyond__title">Btw, I <span class="serif hl">freedive.</span></h2>
+          <p class="beyond__text">Also: solo travel through Vietnam, Taiwan and South Korea with no itinerary or hotels. Just a backpack and a plane ticket.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. Contact: the head turns toward the text -->
+    <section id="contact" class="section section--contact" data-scene='{"x":0.24,"turn":-16,"glass":0.3,"glassHead":0.1,"side":1,"edge":-0.1,"dim":0}'>
+      <div class="contact">
+        <h2 class="display contact__title" data-reveal>Let&rsquo;s talk</h2>
+        <p class="contact__lead serif" data-reveal>I like meeting people. If any of this is interesting, reach out.</p>
+        <div class="contact__email" data-reveal>
+          <a href="mailto:jhrafiy@gmail.com">jhrafiy@gmail.com <span aria-hidden="true">&nearr;</span></a>
+          <button class="contact__copy" type="button" data-copy="jhrafiy@gmail.com" aria-label="Copy email address">Copy</button>
+        </div>
+        <p class="contact__links" data-reveal>
+          <a href="https://www.linkedin.com/in/jacob-rafiy/" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="podcast.html">Podcast</a>
+          <a href="writing.html">Writing</a>
+          <a href="chat.html">jacob.ai</a>
+        </p>
+        <footer class="colophon" data-reveal>
+          <p>&copy; 2026 Jacob Rafiy.</p>
+          <p>The head is sculpted in code: signed distance fields in Python, cut into planes, lit in Three.js, seen through a hand-written reeded-glass shader. The layout is inspired by <a href="https://jribh.com" target="_blank" rel="noopener">Jribh Shandilya&rsquo;s portfolio</a>.</p>
+          <p>Thanks for visiting.</p>
+        </footer>
+      </div>
+    </section>
+  </main>
+
+  <!-- Bottom bar -->
+  <div class="bar" data-bar>
+    <nav class="bar__nav" aria-label="Primary">
+      <a href="#home" class="bar__link is-active" data-nav="home">Home</a>
+      <a href="#about" class="bar__link" data-nav="about">About</a>
+      <a href="#home" class="bar__logo" aria-label="Back to top"><img src="assets/img/logo.svg" alt="" width="30" height="30"></a>
+      <a href="#work" class="bar__link" data-nav="work">Work</a>
+      <a href="#contact" class="bar__link" data-nav="contact">Contact</a>
+    </nav>
+    <div class="bar__social">
+      <a href="https://www.linkedin.com/in/jacob-rafiy/" target="_blank" rel="noopener" aria-label="LinkedIn">in</a>
+      <a href="mailto:jhrafiy@gmail.com" aria-label="Email">@</a>
+    </div>
+  </div>
+
+  <nav class="dots" aria-label="Sections">
+    <a href="#home" class="dots__dot is-active" data-dot="home" aria-label="Home"></a>
+    <a href="#about" class="dots__dot" data-dot="about" aria-label="About"></a>
+    <a href="#work" class="dots__dot" data-dot="work" aria-label="Work"></a>
+    <a href="#contact" class="dots__dot" data-dot="contact" aria-label="Contact"></a>
+  </nav>
+
+  <script type="module" src="js/home.js"></script>
+  <script src="js/chat-widget.js" defer></script>
 </body>
 </html>

@@ -51,23 +51,34 @@
         display: flex;
         align-items: center;
         gap: 8px;
-        padding: 12px 20px;
-        background: #c45d3a;
-        color: white;
-        border: none;
+        padding: 11px 18px;
+        background: rgba(8, 9, 18, 0.72);
+        color: #e8ecff;
+        border: 1px solid rgba(232, 236, 255, 0.18);
         border-radius: 50px;
         font-family: inherit;
-        font-size: 15px;
+        font-size: 14px;
         font-weight: 500;
+        letter-spacing: 0.02em;
         cursor: pointer;
-        box-shadow: 0 4px 20px rgba(196, 93, 58, 0.3);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        box-shadow: 0 8px 28px rgba(0, 0, 0, 0.35);
         transition: all 150ms ease;
       }
 
+      .jcw-button::before {
+        content: '';
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        background: #ff4424;
+        box-shadow: 0 0 12px rgba(255, 68, 36, 0.8);
+      }
+
       .jcw-button:hover {
-        background: #a84d2f;
+        border-color: #ff4424;
         transform: translateY(-2px);
-        box-shadow: 0 6px 24px rgba(196, 93, 58, 0.4);
       }
 
       .jcw-button svg {
@@ -86,10 +97,10 @@
         right: 0;
         width: 380px;
         height: 520px;
-        background: #ffffff;
-        border: 1px solid #d4cfc8;
+        background: #0b0d19;
+        border: 1px solid rgba(232, 236, 255, 0.18);
         border-radius: 12px;
-        box-shadow: 0 8px 40px rgba(0, 0, 0, 0.15);
+        box-shadow: 0 8px 40px rgba(0, 0, 0, 0.55);
         display: flex;
         flex-direction: column;
         overflow: hidden;
@@ -111,15 +122,15 @@
         align-items: center;
         justify-content: space-between;
         padding: 16px 20px;
-        background: #fffcf8;
-        border-bottom: 1px solid #e8e4df;
+        background: #080912;
+        border-bottom: 1px solid rgba(232, 236, 255, 0.12);
       }
 
       .jcw-header-title {
         font-family: 'Fraunces', Georgia, serif;
         font-size: 18px;
         font-weight: 600;
-        color: #2d2a26;
+        color: #e8ecff;
         margin: 0;
         letter-spacing: -0.02em;
       }
@@ -139,13 +150,13 @@
         border: none;
         border-radius: 6px;
         cursor: pointer;
-        color: #6b6560;
+        color: #a3abc4;
         transition: all 150ms ease;
       }
 
       .jcw-header-btn:hover {
-        background: #f0e6e0;
-        color: #c45d3a;
+        background: rgba(255, 68, 36, 0.14);
+        color: #ff4424;
       }
 
       .jcw-header-btn svg {
@@ -162,7 +173,7 @@
         display: flex;
         flex-direction: column;
         gap: 12px;
-        background: #fffcf8;
+        background: #080912;
       }
 
       /* Empty State */
@@ -173,7 +184,7 @@
         align-items: center;
         justify-content: center;
         text-align: center;
-        color: #6b6560;
+        color: #a3abc4;
         padding: 20px;
       }
 
@@ -204,7 +215,7 @@
 
       .jcw-message-label {
         font-size: 11px;
-        color: #6b6560;
+        color: #a3abc4;
         margin-bottom: 4px;
         font-weight: 500;
         letter-spacing: 0.05em;
@@ -222,14 +233,14 @@
       }
 
       .jcw-message.jcw-user .jcw-message-content {
-        background: #c45d3a;
+        background: #ff4424;
         color: white;
         border-bottom-right-radius: 4px;
       }
 
       .jcw-message.jcw-assistant .jcw-message-content {
-        background: #f0e6e0;
-        color: #2d2a26;
+        background: rgba(255, 68, 36, 0.14);
+        color: #e8ecff;
         border-bottom-left-radius: 4px;
       }
 
@@ -239,26 +250,26 @@
         flex-wrap: wrap;
         gap: 6px;
         padding: 12px 16px;
-        border-top: 1px solid #e8e4df;
-        background: #fffcf8;
+        border-top: 1px solid rgba(232, 236, 255, 0.12);
+        background: #080912;
       }
 
       .jcw-suggestion-btn {
         background: transparent;
-        border: 1px solid #d4cfc8;
+        border: 1px solid rgba(232, 236, 255, 0.18);
         border-radius: 16px;
         padding: 6px 12px;
         font-family: inherit;
         font-size: 12px;
-        color: #6b6560;
+        color: #a3abc4;
         cursor: pointer;
         transition: all 150ms ease;
       }
 
       .jcw-suggestion-btn:hover:not(:disabled) {
-        border-color: #c45d3a;
-        color: #c45d3a;
-        background: #f0e6e0;
+        border-color: #ff4424;
+        color: #ff4424;
+        background: rgba(255, 68, 36, 0.14);
       }
 
       .jcw-suggestion-btn:disabled {
@@ -275,34 +286,34 @@
         display: flex;
         gap: 8px;
         padding: 12px 16px;
-        border-top: 1px solid #e8e4df;
-        background: #ffffff;
+        border-top: 1px solid rgba(232, 236, 255, 0.12);
+        background: #0b0d19;
       }
 
       .jcw-input {
         flex: 1;
         padding: 10px 14px;
-        border: 1px solid #d4cfc8;
+        border: 1px solid rgba(232, 236, 255, 0.18);
         border-radius: 8px;
         font-family: inherit;
         font-size: 14px;
-        color: #2d2a26;
-        background: #fffcf8;
+        color: #e8ecff;
+        background: #080912;
         outline: none;
         transition: border-color 150ms ease;
       }
 
       .jcw-input:focus {
-        border-color: #c45d3a;
+        border-color: #ff4424;
       }
 
       .jcw-input::placeholder {
-        color: #6b6560;
+        color: #a3abc4;
       }
 
       .jcw-send-btn {
         padding: 10px 16px;
-        background: #c45d3a;
+        background: #ff4424;
         color: white;
         border: none;
         border-radius: 8px;
@@ -314,7 +325,7 @@
       }
 
       .jcw-send-btn:hover:not(:disabled) {
-        background: #a84d2f;
+        background: #e0391c;
       }
 
       .jcw-send-btn:disabled {
@@ -332,7 +343,7 @@
       .jcw-loading-dot {
         width: 8px;
         height: 8px;
-        background: #6b6560;
+        background: #a3abc4;
         border-radius: 50%;
         animation: jcwBounce 1.4s infinite ease-in-out both;
       }
@@ -347,9 +358,9 @@
 
       /* Error Message */
       .jcw-error {
-        background: #fef2f2;
-        border: 1px solid #fecaca;
-        color: #991b1b;
+        background: rgba(255, 68, 36, 0.12);
+        border: 1px solid rgba(255, 68, 36, 0.35);
+        color: #ff8a70;
         padding: 8px 12px;
         border-radius: 8px;
         font-size: 12px;
@@ -401,11 +412,11 @@
     const widget = document.createElement('div');
     widget.className = 'jcw-widget';
     widget.innerHTML = `
-      <button class="jcw-button" id="jcwToggleBtn">
+      <button class="jcw-button" id="jcwToggleBtn" aria-label="Chat with jacob.ai">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
         </svg>
-        jacob.ai
+        <span class="jcw-button-label">jacob.ai</span>
       </button>
 
       <div class="jcw-window" id="jcwWindow">

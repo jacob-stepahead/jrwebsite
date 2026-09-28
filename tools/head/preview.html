@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Head model preview</title>
+<style>
+  html, body { margin: 0; background: #1b1d24; color: #ccd; font: 12px/1.4 system-ui, sans-serif; }
+  #grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; }
+  canvas { width: 100%; display: block; }
+  .cell { position: relative; }
+  .cell span { position: absolute; left: 6px; top: 4px; opacity: .6; }
+</style>
+<script type="importmap">
+{ "imports": { "three": "../../js/vendor/three/three.module.min.js" } }
+</script>
+</head>
+<body>
+<div id="grid"></div>
+<script type="module">
+// Turntable-style preview of assets/3d/head.glb for sculpting iterations.
+// ?views=front,34,side  ?model=../../assets/3d/head.glb  ?size=520  ?hair=0
+import * as THREE from 'three';
+import { GLTFLoader } from '../../js/vendor/three/addons/loaders/GLTFLoader.js';
+
+const qs = new URLSearchParams(location.search);
+const size = +(qs.get('size') || 520);
+const views = (qs.get('views') || 'front,34,side,back34,low34,top').split(',');
+const showHair = qs.get('hair') !== '0';
+const ANGLES = {
+  front: [0, 0], '34': [35, 0], side: [90, 0], back34: [145, 5], low34: [28, -18], top: [20, 35],
+  left34: [-35, 0], back: [180, 0]
+};
+
+const renderer = new THREE.WebGLRenderer({ antialias: true, preserveDrawingBuffer: true });
+renderer.setSize(size, size);
+renderer.setPixelRatio(1);
+renderer.toneMapping = THREE.ACESFilmicToneMapping;
+
+const scene = new THREE.Scene();
+scene.background = new THREE.Color(0x1b1d24);
+scene.add(new THREE.HemisphereLight(0xdde4ff, 0x302824, 1.1));
+const key = new THREE.DirectionalLight(0xffffff, 2.6);
+key.position.set(-6, 8, 10);
+scene.add(key);
+const rim = new THREE.DirectionalLight(0xffb080, 1.4);
+rim.position.set(9, 2, -8);
+scene.add(rim);
+
+const clay = new THREE.MeshStandardMaterial({ color: 0xb8bcc8, roughness: 0.62, metalness: 0.0 });
+const clayAO = new THREE.MeshStandardMaterial({ color: 0xb8bcc8, roughness: 0.62, metalness: 0.0, vertexColors: true });
+clayAO.onBeforeCompile = (s) => {
+  // Use only the R channel of COLOR_0 as AO (G/B carry other data).
+  s.fragmentShader = s.fragmentShader.replace('#include <color_fragment>',
+    '#include <color_fragment>\n diffuseColor.rgb = diffuse * mix(0.35, 1.0, vColor.r);');
+};
+
+const hairMat = clayAO.clone();
+hairMat.color.set(0x6f6660);
+hairMat.onBeforeCompile = clayAO.onBeforeCompile;
+hairMat.side = THREE.DoubleSide;
+const gltf = await new GLTFLoader().loadAsync(qs.get('model') || '../../assets/3d/head.glb');
+const root = gltf.scene;
+root.traverse((o) => {
+  if (!o.isMesh) return;
+  if (o.name.startsWith('Eye')) o.material = new THREE.MeshBasicMaterial({ color: 0xffffff });
+  else if (o.name.startsWith('Hair')) { o.visible = showHair; o.material = hairMat; }
+  else o.material = qs.get('ao') === '0' ? clay : clayAO;
+  if (qs.get('debug') === 'normal') o.material = new THREE.MeshNormalMaterial();
+  if (qs.get('debug') === 'double') { o.material = o.material.clone(); o.material.side = THREE.DoubleSide; }
+  if (qs.get('debug') === 'ao') o.material = new THREE.MeshBasicMaterial({ vertexColors: true });
+});
+scene.add(root);
+
+const grid = document.getElementById('grid');
+const cam = new THREE.OrthographicCamera(-15, 15, 15, -15, 0.1, 200);
+const target = new THREE.Vector3(0, -1.5, 0);
+const zoom = +(qs.get('zoom') || 0.72);
+for (const v of views) {
+  const [az, el] = ANGLES[v] || v.split(':').map(Number);
+  const r = 60;
+  const a = THREE.MathUtils.degToRad(az), e = THREE.MathUtils.degToRad(el);
+  cam.position.set(target.x + r * Math.sin(a) * Math.cos(e), target.y + r * Math.sin(e), target.z + r * Math.cos(a) * Math.cos(e));
+  cam.zoom = zoom;
+  cam.updateProjectionMatrix();
+  cam.lookAt(target);
+  key.position.copy(cam.position).add(new THREE.Vector3(-20, 25, 0).applyQuaternion(cam.quaternion));
+  renderer.render(scene, cam);
+  const img = document.createElement('div');
+  img.className = 'cell';
+  const c = document.createElement('canvas');
+  c.width = size; c.height = size;
+  c.getContext('2d').drawImage(renderer.domElement, 0, 0);
+  img.appendChild(c);
+  const label = document.createElement('span');
+  label.textContent = v;
+  img.appendChild(label);
+  grid.appendChild(img);
+}
+window.__done = true;
+</script>
+</body>
+</html>

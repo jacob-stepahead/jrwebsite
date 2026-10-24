@@ -94,13 +94,10 @@ JHR Commodities/COVID Reselling:
 - Recruited as salaried consultant by 1,500-member reseller community at age 17
 - Still operating, still consults on major releases
 
-StepAhead (current):
-- Co-founder of StepAhead (yourstepahead.ai), a technical optimization firm for small businesses
-- Uses AI to build the websites, voice agents, and automations that help owners capture more revenue and run leaner
-- Services: AI workflows, custom AI app development, website design, SEO/AEO, AI voice agents
-
-SpartanConsulting.ai:
-- Founded in summer 2025 as an AI consultancy for small businesses
+StepAhead (yourstepahead.ai, 2025-Present, formerly SpartanConsulting.ai):
+- Founded in summer 2025 as SpartanConsulting.ai, an AI consultancy for small businesses; later renamed StepAhead
+- Today a technical optimization firm for small businesses: uses AI to build the websites, voice agents, and automations that help owners capture more revenue and run leaner
+- Services now: AI workflows, custom AI app development, website design, SEO/AEO, AI voice agents
 - Not technical initially; tried building himself and hit a wall
 - Pivoted, recruited technical co-founder, scaled to 7 team members
 - Sourced clients, diagnosed problems, designed solutions, delivered
@@ -132,13 +129,6 @@ Friend Sharpens Friend (Podcast 2024-Present):
 - No scripts, no guests, raw conversation
 - Purpose: sharpen thinking, improve articulation, hold each other accountable
 
-What He's Looking For:
-- Role working with very intelligent people, learning constantly
-- Ideally: founder's associate, chief of staff, or early-stage startup roles
-- Prioritizes learning density over everything else
-- Long-term goal: be an entrepreneur; wants to learn from people at that level
-- Wants an apprenticeship
-
 What Energizes Him:
 - Chaos with no playbook
 - Strategic thinking and creative problem-solving
@@ -168,7 +158,7 @@ Random Interests:
 
 How He Uses AI:
 - Built this website and chatbot using AI ("vibe codes")
-- Founded SpartanConsulting.ai — deployed real AI systems for real businesses
+- Founded StepAhead (originally SpartanConsulting.ai) — deploys real AI systems for real businesses
 - Constantly experiments with all major models: Claude, ChatGPT, Gemini, Grok, Llama
 - Uses AI daily: research (Perplexity), brainstorming, studying, writing critique, challenging his own thinking
 

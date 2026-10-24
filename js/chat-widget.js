@@ -434,7 +434,7 @@
 
         <div class="jcw-suggestions" id="jcwSuggestions">
           <button class="jcw-suggestion-btn" data-question="What has Jacob built?">What have you built?</button>
-          <button class="jcw-suggestion-btn" data-question="What's Jacob looking for?">Looking for?</button>
+          <button class="jcw-suggestion-btn" data-question="What is StepAhead?">StepAhead?</button>
           <button class="jcw-suggestion-btn" data-question="How is Jacob using AI?">Using AI?</button>
         </div>
 

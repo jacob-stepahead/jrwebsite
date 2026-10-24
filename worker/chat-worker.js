@@ -37,7 +37,7 @@ What you avoid:
 **Who Jacob Is:**
 
 The Basics:
-- Senior at University of Michigan studying economics with a minor in philosophy
+- Graduated from the University of Michigan (Class of 2026), economics with a minor in philosophy
 - Born and raised in New York City
 - Took the subway alone to school starting at age 10, no cell phone
 - Took a gap year before college, living in Tel Aviv (worked at Hygear startup) and Cape Town (worked in a foster home in a township)
@@ -94,8 +94,13 @@ JHR Commodities/COVID Reselling:
 - Recruited as salaried consultant by 1,500-member reseller community at age 17
 - Still operating, still consults on major releases
 
+StepAhead (current):
+- Co-founder of StepAhead (yourstepahead.ai), a technical optimization firm for small businesses
+- Uses AI to build the websites, voice agents, and automations that help owners capture more revenue and run leaner
+- Services: AI workflows, custom AI app development, website design, SEO/AEO, AI voice agents
+
 SpartanConsulting.ai:
-- Founded last summer as an AI consultancy for small businesses
+- Founded in summer 2025 as an AI consultancy for small businesses
 - Not technical initially; tried building himself and hit a wall
 - Pivoted, recruited technical co-founder, scaled to 7 team members
 - Sourced clients, diagnosed problems, designed solutions, delivered
@@ -119,6 +124,7 @@ This Website (2026):
 - No tutorials, templates, or Stack Overflow
 - Demonstrates learning fast, asking precise questions, directing AI effectively
 - He "vibe codes" with AI — not a traditional developer
+- Rebuilt in late 2026 around a real-time 3D model of his head, made in Blender and rendered in the browser with Three.js
 
 Friend Sharpens Friend (Podcast 2024-Present):
 - Co-hosted with Portuguese aerospace engineer friend

@@ -3,13 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0a0a0b">
   <title>Projects - Jacob Rafiy</title>
   <meta name="description" content="Projects and ventures by Jacob Rafiy.">
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
   <header class="site-header">
-    <nav>
+    <a href="index.html" class="wordmark">Jacob Rafiy</a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+    <nav id="site-nav" class="site-nav" aria-label="Main">
       <ul class="nav-list">
         <li><a href="index.html" class="nav-link">About</a></li>
         <li><a href="projects.html" class="nav-link active">Projects</a></li>
@@ -27,6 +30,16 @@
         <h1 class="page-title">Projects</h1>
 
         <ul class="item-list">
+          <li class="item">
+            <div class="item-header">
+              <h2 class="item-title"><a href="https://yourstepahead.ai" class="external-link" target="_blank" rel="noopener">StepAhead</a></h2>
+              <span class="item-role">Co-founder</span>
+            </div>
+            <p class="item-meta">2026 – Present</p>
+            <p class="item-description">StepAhead is a technical optimization firm for small businesses. We use AI to build the websites, voice agents, and automations that help owners capture more revenue and run leaner.</p>
+            <p class="item-description">What we build: AI workflows, custom AI apps, websites, SEO and AEO, and AI voice agents. Outcomes lead; AI is the method.</p>
+          </li>
+
           <li class="item">
             <div class="item-header">
               <h2 class="item-title"><a href="https://spartanconsulting.ai/about" class="external-link">Spartanconsulting.ai</a></h2>
@@ -70,6 +83,7 @@
             <p class="item-description">No tutorials, no templates, no Stack Overflow. Just AI tools and the determination to figure it out.</p>
             <p class="item-description">The result is what you're looking at — a full personal website with a custom AI chatbot trained to think and respond in my voice, built from scratch through iterative problem-solving across multiple LLMs. Every decision, from architecture to design, was something I had to understand well enough to direct. The LLMs wrote code. I had to know what to ask for, when something was wrong, and how to push toward what I actually wanted.</p>
             <p class="item-description">From this experience, I have learned that the ability to think clearly, ask precise questions, and learn fast is becoming the most valuable skills in our rapidly changing world.</p>
+            <p class="item-description">In late 2026 I rebuilt it around a 3D model of my own head, made in Blender and rendered live in the browser with Three.js. It follows your cursor.</p>
           </li>
 
           <li class="item">
@@ -87,6 +101,7 @@
     </main>
   </div>
 
+  <script src="js/site.js" defer></script>
   <script src="js/chat-widget.js"></script>
 </body>
 </html>

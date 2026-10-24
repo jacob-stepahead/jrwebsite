@@ -43,7 +43,7 @@
         bottom: 24px;
         right: 24px;
         z-index: 9999;
-        font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        font-family: 'Inter Tight', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
       }
 
       /* Minimized Button */
@@ -52,22 +52,22 @@
         align-items: center;
         gap: 8px;
         padding: 12px 20px;
-        background: #c45d3a;
-        color: white;
+        background: #eeece8;
+        color: #0a0a0b;
         border: none;
         border-radius: 50px;
         font-family: inherit;
         font-size: 15px;
         font-weight: 500;
         cursor: pointer;
-        box-shadow: 0 4px 20px rgba(196, 93, 58, 0.3);
+        box-shadow: 0 4px 24px rgba(0, 0, 0, 0.45);
         transition: all 150ms ease;
       }
 
       .jcw-button:hover {
-        background: #a84d2f;
+        background: #ffffff;
         transform: translateY(-2px);
-        box-shadow: 0 6px 24px rgba(196, 93, 58, 0.4);
+        box-shadow: 0 6px 28px rgba(255, 154, 92, 0.25);
       }
 
       .jcw-button svg {
@@ -86,10 +86,10 @@
         right: 0;
         width: 380px;
         height: 520px;
-        background: #ffffff;
-        border: 1px solid #d4cfc8;
-        border-radius: 12px;
-        box-shadow: 0 8px 40px rgba(0, 0, 0, 0.15);
+        background: #111113;
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        border-radius: 16px;
+        box-shadow: 0 16px 60px rgba(0, 0, 0, 0.6);
         display: flex;
         flex-direction: column;
         overflow: hidden;
@@ -111,15 +111,15 @@
         align-items: center;
         justify-content: space-between;
         padding: 16px 20px;
-        background: #fffcf8;
-        border-bottom: 1px solid #e8e4df;
+        background: #0e0e10;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
       }
 
       .jcw-header-title {
-        font-family: 'Fraunces', Georgia, serif;
-        font-size: 18px;
+        font-family: 'Inter Tight', -apple-system, sans-serif;
+        font-size: 17px;
         font-weight: 600;
-        color: #2d2a26;
+        color: #eeece8;
         margin: 0;
         letter-spacing: -0.02em;
       }
@@ -139,13 +139,13 @@
         border: none;
         border-radius: 6px;
         cursor: pointer;
-        color: #6b6560;
+        color: #a3a09a;
         transition: all 150ms ease;
       }
 
       .jcw-header-btn:hover {
-        background: #f0e6e0;
-        color: #c45d3a;
+        background: rgba(255, 154, 92, 0.12);
+        color: #ff9a5c;
       }
 
       .jcw-header-btn svg {
@@ -162,7 +162,7 @@
         display: flex;
         flex-direction: column;
         gap: 12px;
-        background: #fffcf8;
+        background: #0e0e10;
       }
 
       /* Empty State */
@@ -173,7 +173,7 @@
         align-items: center;
         justify-content: center;
         text-align: center;
-        color: #6b6560;
+        color: #a3a09a;
         padding: 20px;
       }
 
@@ -204,7 +204,7 @@
 
       .jcw-message-label {
         font-size: 11px;
-        color: #6b6560;
+        color: #a3a09a;
         margin-bottom: 4px;
         font-weight: 500;
         letter-spacing: 0.05em;
@@ -222,14 +222,14 @@
       }
 
       .jcw-message.jcw-user .jcw-message-content {
-        background: #c45d3a;
-        color: white;
+        background: #ff9a5c;
+        color: #1a0d05;
         border-bottom-right-radius: 4px;
       }
 
       .jcw-message.jcw-assistant .jcw-message-content {
-        background: #f0e6e0;
-        color: #2d2a26;
+        background: #1d1d21;
+        color: #eeece8;
         border-bottom-left-radius: 4px;
       }
 
@@ -239,26 +239,26 @@
         flex-wrap: wrap;
         gap: 6px;
         padding: 12px 16px;
-        border-top: 1px solid #e8e4df;
-        background: #fffcf8;
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+        background: #0e0e10;
       }
 
       .jcw-suggestion-btn {
         background: transparent;
-        border: 1px solid #d4cfc8;
+        border: 1px solid rgba(255, 255, 255, 0.16);
         border-radius: 16px;
         padding: 6px 12px;
         font-family: inherit;
         font-size: 12px;
-        color: #6b6560;
+        color: #a3a09a;
         cursor: pointer;
         transition: all 150ms ease;
       }
 
       .jcw-suggestion-btn:hover:not(:disabled) {
-        border-color: #c45d3a;
-        color: #c45d3a;
-        background: #f0e6e0;
+        border-color: #ff9a5c;
+        color: #ff9a5c;
+        background: rgba(255, 154, 92, 0.12);
       }
 
       .jcw-suggestion-btn:disabled {
@@ -275,35 +275,35 @@
         display: flex;
         gap: 8px;
         padding: 12px 16px;
-        border-top: 1px solid #e8e4df;
-        background: #ffffff;
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+        background: #111113;
       }
 
       .jcw-input {
         flex: 1;
         padding: 10px 14px;
-        border: 1px solid #d4cfc8;
+        border: 1px solid rgba(255, 255, 255, 0.16);
         border-radius: 8px;
         font-family: inherit;
         font-size: 14px;
-        color: #2d2a26;
-        background: #fffcf8;
+        color: #eeece8;
+        background: #18181b;
         outline: none;
         transition: border-color 150ms ease;
       }
 
       .jcw-input:focus {
-        border-color: #c45d3a;
+        border-color: #ff9a5c;
       }
 
       .jcw-input::placeholder {
-        color: #6b6560;
+        color: #a3a09a;
       }
 
       .jcw-send-btn {
         padding: 10px 16px;
-        background: #c45d3a;
-        color: white;
+        background: #ff9a5c;
+        color: #1a0d05;
         border: none;
         border-radius: 8px;
         font-family: inherit;
@@ -314,7 +314,7 @@
       }
 
       .jcw-send-btn:hover:not(:disabled) {
-        background: #a84d2f;
+        background: #ffb27f;
       }
 
       .jcw-send-btn:disabled {
@@ -332,7 +332,7 @@
       .jcw-loading-dot {
         width: 8px;
         height: 8px;
-        background: #6b6560;
+        background: #a3a09a;
         border-radius: 50%;
         animation: jcwBounce 1.4s infinite ease-in-out both;
       }
@@ -347,9 +347,9 @@
 
       /* Error Message */
       .jcw-error {
-        background: #fef2f2;
-        border: 1px solid #fecaca;
-        color: #991b1b;
+        background: rgba(239, 68, 68, 0.12);
+        border: 1px solid rgba(239, 68, 68, 0.35);
+        color: #fca5a5;
         padding: 8px 12px;
         border-radius: 8px;
         font-size: 12px;

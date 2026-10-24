@@ -1,0 +1,4 @@
+tools/node_modules/
+assets/models/*-raw.glb
+assets/models/dev-*.glb
+*.blend1

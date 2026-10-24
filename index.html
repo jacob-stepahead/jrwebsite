@@ -4,12 +4,17 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Jacob Rafiy</title>
-  <meta name="description" content="Jacob Rafiy - Economics and Philosophy at the University of Michigan. Building, investing, and writing.">
+  <meta name="description" content="Jacob Rafiy — co-founder of StepAhead. Economics and Philosophy, University of Michigan '26. Building, investing, and writing.">
+  <meta name="theme-color" content="#0a0a0b">
   <link rel="stylesheet" href="css/styles.css">
+  <link rel="modulepreload" href="js/hero.min.js">
+  <link rel="preload" href="assets/models/jacob-head.glb" as="fetch" type="model/gltf-binary" crossorigin>
 </head>
-<body>
+<body class="home">
   <header class="site-header">
-    <nav>
+    <a href="index.html" class="wordmark">Jacob Rafiy</a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+    <nav id="site-nav" class="site-nav" aria-label="Main">
       <ul class="nav-list">
         <li><a href="index.html" class="nav-link active">About</a></li>
         <li><a href="projects.html" class="nav-link">Projects</a></li>
@@ -21,22 +26,56 @@
     </nav>
   </header>
 
-  <div class="container">
-    <main class="page">
-      <div class="content-card">
-        <header class="header-block">
-          <h1 class="header-name">Jacob Rafiy</h1>
-          <div class="header-details">
-            <p>Born and Raised in New York City</p>
-            <p>University of Michigan, Class of 2026</p>
-            <p>Economics and Philosophy</p>
-            <p><a href="mailto:jhrafiy@gmail.com">jhrafiy@gmail.com</a></p>
-            <p><a href="https://www.linkedin.com/in/jacob-rafiy/">linkedin.com/in/jacob-rafiy</a></p>
+  <main>
+    <section class="hero" aria-label="Introduction">
+      <canvas class="hero-canvas" data-model="assets/models/jacob-head.glb" aria-hidden="true"></canvas>
+
+      <div class="hero-meta" aria-hidden="true">
+        <span>Born &amp; raised in New York City</span>
+        <span class="hero-loading"><span class="hero-progress" data-hero-progress></span></span>
+      </div>
+
+      <div class="hero-copy">
+        <h1 class="hero-title">Jacob<br><span class="serif">Rafiy</span></h1>
+        <p class="hero-sub">Co-founder of <strong>StepAhead</strong>. Builder, operator, and student of philosophy.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-inner">
+        <p class="eyebrow reveal">About</p>
+        <p class="statement reveal">I've been playing the same game since I was a kid: <span class="serif">options, angles, next moves.</span></p>
+
+        <dl class="statement-meta reveal">
+          <div>
+            <dt>Now</dt>
+            <dd>Co-founder, <a href="https://yourstepahead.ai" target="_blank" rel="noopener">StepAhead</a></dd>
           </div>
-        </header>
+          <div>
+            <dt>Studied</dt>
+            <dd>Economics &amp; Philosophy,<br>University of Michigan '26</dd>
+          </div>
+          <div>
+            <dt>From</dt>
+            <dd>New York City</dd>
+          </div>
+          <div>
+            <dt>Contact</dt>
+            <dd><a href="mailto:jhrafiy@gmail.com">jhrafiy@gmail.com</a><br><a href="https://www.linkedin.com/in/jacob-rafiy/" target="_blank" rel="noopener">LinkedIn</a></dd>
+          </div>
+        </dl>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-inner story">
+        <div class="story-label reveal">
+          <p class="eyebrow">Story</p>
+          <h2>Noi Bai International Airport</h2>
+        </div>
 
         <article class="about-content">
-          <p>Detained in a back room of Noi Bai International Airport with an expired visa, no cash, a debit card that doesn't work, and three Vietnamese security officials yelling at me.</p>
+          <p class="lede reveal">Detained in a back room of Noi Bai International Airport with an expired visa, no cash, a debit card that doesn't work, and three Vietnamese security officials yelling at me.</p>
 
           <p>My flight to Australia had been canceled and rebooked. The rebooking pushed me two days past my visa's expiration. They needed 1,300,000 Dong (~$50 USD) to let me through. Cash only. I didn't have it. I had 30 minutes to figure it out.</p>
 
@@ -52,23 +91,132 @@
 
           <hr class="section-break">
 
-          <p>That instinct appeared early.</p>
+          <p class="lede">That instinct appeared early.</p>
 
           <p>In elementary school, I wanted the new Derrick Rose basketball shoes. My parents said no. I decided I was going to get them. I started reselling snacks to classmates. By the time I'd saved enough, I didn't buy the shoes. The game was far more interesting than the prize.</p>
 
           <p>At 16, I noticed my cousin couldn't get exercise equipment. COVID had decimated supply chains. I did some research and found the same pattern everywhere—demand spiking, supply frozen. Starting with $2,500 I'd made from previous ventures, I scaled JHR Commodities to six figures in revenue within 6 months. I resold everything I could find: patio heaters, swimming pools, video game consoles, Nvidia GPUs, Pokémon cards, shoes, NFTs. After documenting my research and flips, a 1,500-member reseller community recruited me as a salaried consultant. I was 17.</p>
 
-          <p>Last summer, I founded Spartanconsulting.ai, an AI consultancy for small businesses. I'm not technical. I tried building solutions myself and quickly hit a wall. I pivoted, recruited a technical co-founder, and eventually scaled the team to seven. I sourced clients, diagnosed their problems, designed solutions with the technical team, and delivered. We're on track to generate $128K+ in client value this year.</p>
+          <p>In the summer of 2025, I founded Spartanconsulting.ai, an AI consultancy for small businesses. I'm not technical. I tried building solutions myself and quickly hit a wall. I pivoted, recruited a technical co-founder, and eventually scaled the team to seven. I sourced clients, diagnosed their problems, designed solutions with the technical team, and delivered.</p>
 
-          <p>Outside of work and school, I have solo-traveled through Vietnam, Taiwan, and South Korea with no itinerary or hotels. Just a backpack and a plane ticket. I scuba dive and freedive. I read and write a lot, and I co-host a podcast with a close friend where we talk about philosophy, self-improvement, books, and whatever else we're enjoying.</p>
+          <p>Today I'm a co-founder of <a href="https://yourstepahead.ai" target="_blank" rel="noopener">StepAhead</a>, a technical optimization firm for small businesses. We use AI to build the websites, voice agents, and automations that help owners capture more revenue and run leaner.</p>
 
-          <p class="contact-line">I like meeting people. If any of this is interesting, reach out.<br>
-          <a href="mailto:jhrafiy@gmail.com">jhrafiy@gmail.com</a></p>
+          <p>Outside of work, I have solo-traveled through Vietnam, Taiwan, and South Korea with no itinerary or hotels. Just a backpack and a plane ticket. I scuba dive and freedive. I read and write a lot, and I co-host a podcast with a close friend where we talk about philosophy, self-improvement, books, and whatever else we're enjoying.</p>
         </article>
       </div>
-    </main>
-  </div>
+    </section>
 
+    <section class="section">
+      <div class="section-inner">
+        <div class="section-head">
+          <h2 class="reveal">Selected <span class="serif">work</span></h2>
+          <p class="reveal">Companies, systems, and experiments. <a href="projects.html">All projects</a> · <a href="ai-portfolio.html">AI portfolio</a></p>
+        </div>
+
+        <ul class="work-grid">
+          <li class="work-item is-wide reveal">
+            <a class="work-card" href="https://yourstepahead.ai" target="_blank" rel="noopener">
+              <div class="work-card-meta"><span>Co-founder</span><span>Now</span></div>
+              <h3>StepAhead</h3>
+              <p>A technical optimization firm for small businesses: websites, voice agents, and automations that help owners capture more revenue and run leaner.</p>
+              <span class="arrow" aria-hidden="true">&#8599;</span>
+            </a>
+          </li>
+          <li class="work-item reveal">
+            <a class="work-card" href="projects.html">
+              <div class="work-card-meta"><span>Founder</span><span>2025</span></div>
+              <h3>Spartanconsulting.ai</h3>
+              <p>An AI consultancy for small businesses. Scaled from one person to a team of seven, on track for $128K+ in client value.</p>
+              <span class="arrow" aria-hidden="true">&#8594;</span>
+            </a>
+          </li>
+          <li class="work-item reveal">
+            <a class="work-card" href="projects.html">
+              <div class="work-card-meta"><span>Founder</span><span>2020</span></div>
+              <h3>JHR Commodities</h3>
+              <p>Started at 16 with $2,500. Grew into a $250K+ reselling operation across Amazon, eBay, and Facebook Marketplace.</p>
+              <span class="arrow" aria-hidden="true">&#8594;</span>
+            </a>
+          </li>
+          <li class="work-item reveal">
+            <a class="work-card" href="ai-portfolio.html">
+              <div class="work-card-meta"><span>AI</span><span>2026</span></div>
+              <h3>BIGWOP</h3>
+              <p>A cognitive training system: mental arithmetic, dual n-back, Claude-powered decision training, spaced repetition, and a decision journal.</p>
+              <span class="arrow" aria-hidden="true">&#8594;</span>
+            </a>
+          </li>
+          <li class="work-item reveal">
+            <a class="work-card" href="ai-portfolio.html">
+              <div class="work-card-meta"><span>AI</span><span>2026</span></div>
+              <h3>Daily AI Briefing</h3>
+              <p>Twelve hand-picked sources, filtered by Claude for real signal, in my inbox at 9 AM every day.</p>
+              <span class="arrow" aria-hidden="true">&#8594;</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-inner">
+        <div class="section-head">
+          <h2 class="reveal">Else<span class="serif">where</span></h2>
+          <p class="reveal">Conversations, essays, and an AI that talks like me.</p>
+        </div>
+
+        <ul class="work-grid">
+          <li class="work-item reveal">
+            <a class="work-card" href="podcast.html">
+              <div class="work-card-meta"><span>Podcast</span><span>Weekly</span></div>
+              <h3>Friend Sharpens Friend</h3>
+              <p>An aerospace engineer from Portugal and a philosopher from NYC, working through whatever we're learning.</p>
+              <span class="arrow" aria-hidden="true">&#8594;</span>
+            </a>
+          </li>
+          <li class="work-item reveal">
+            <a class="work-card" href="writing.html">
+              <div class="work-card-meta"><span>Writing</span><span>Essays</span></div>
+              <h3>Kant, Hume, Nietzsche</h3>
+              <p>Essays on metaphysics, Greek philosophy, aesthetics, and logic.</p>
+              <span class="arrow" aria-hidden="true">&#8594;</span>
+            </a>
+          </li>
+          <li class="work-item reveal">
+            <a class="work-card" href="chat.html">
+              <div class="work-card-meta"><span>Chat</span><span>Live</span></div>
+              <h3>jacob.ai</h3>
+              <p>Ask the AI version of me anything. It's trained on how I think (kind of, haha).</p>
+              <span class="arrow" aria-hidden="true">&#8594;</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section contact">
+      <div class="section-inner">
+        <p class="eyebrow reveal">Contact</p>
+        <p class="reveal">I like meeting people. If any of this is interesting, reach out.</p>
+        <a class="contact-big reveal" href="mailto:jhrafiy@gmail.com">jhrafiy@gmail.com</a>
+        <div class="contact-links reveal">
+          <a href="https://www.linkedin.com/in/jacob-rafiy/" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="https://open.spotify.com/show/2zN2D4DjrB8tMMfku8KaLf" target="_blank" rel="noopener">Spotify</a>
+          <a href="https://yourstepahead.ai" target="_blank" rel="noopener">StepAhead</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="site-footer-inner">
+      <span>&copy; 2026 Jacob Rafiy</span>
+      <span>Head modeled in Blender, rendered live with Three.js.</span>
+    </div>
+  </footer>
+
+  <script type="module" src="js/hero.min.js"></script>
+  <script src="js/site.js" defer></script>
   <script src="js/chat-widget.js"></script>
 </body>
 </html>

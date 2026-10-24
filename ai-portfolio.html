@@ -3,13 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0a0a0b">
   <title>AI Portfolio - Jacob Rafiy</title>
   <meta name="description" content="AI projects built by Jacob Rafiy — cognitive training, daily briefings, deal flow, and more.">
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
   <header class="site-header">
-    <nav>
+    <a href="index.html" class="wordmark">Jacob Rafiy</a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+    <nav id="site-nav" class="site-nav" aria-label="Main">
       <ul class="nav-list">
         <li><a href="index.html" class="nav-link">About</a></li>
         <li><a href="projects.html" class="nav-link">Projects</a></li>
@@ -64,6 +67,7 @@
             <p class="item-meta">February 2026</p>
             <p class="item-description"><strong>Why:</strong> I wanted a single place to demonstrate who I am and how I think.</p>
             <p class="item-description"><strong>How:</strong> Full single-page site with integrated AI chatbot powered by the Claude API, routed through a Cloudflare Worker proxy for secure key management. The chatbot is trained on my personal interests, so anyone can have a real conversation with a faithful representation of how I think (kind of haha). Custom HTML/CSS, deployed on Cloudflare.</p>
+            <p class="item-description"><strong>Rebuild:</strong> A cinematic redesign around a real-time 3D model of my head. Modeled in Blender, compressed with gltfpack, and rendered with Three.js: studio lighting, glowing eyes, a fluted-glass shader, and a head that turns to follow your cursor.</p>
           </li>
 
         </ul>
@@ -71,6 +75,7 @@
     </main>
   </div>
 
+  <script src="js/site.js" defer></script>
   <script src="js/chat-widget.js"></script>
 </body>
 </html>

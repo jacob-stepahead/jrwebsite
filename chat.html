@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0a0a0b">
   <title>Chat with Jacob</title>
   <meta name="description" content="Chat with Jacob Rafiy - Ask me anything about my work, interests, or philosophy.">
   <link rel="stylesheet" href="css/styles.css">
@@ -11,7 +12,7 @@
     .chat-container {
       display: flex;
       flex-direction: column;
-      height: calc(100vh - 200px);
+      height: calc(100vh - 260px);
       min-height: 400px;
       max-height: 600px;
     }
@@ -23,11 +24,12 @@
     }
 
     .chat-intro h1 {
-      font-family: var(--font-serif);
+      font-family: var(--font-sans);
       font-size: var(--text-2xl);
-      font-weight: 600;
+      font-weight: 500;
+      line-height: 1.05;
       margin: 0 0 var(--space-2) 0;
-      letter-spacing: -0.02em;
+      letter-spacing: -0.04em;
     }
 
     .chat-intro p {
@@ -73,12 +75,12 @@
 
     .message.user .message-content {
       background: var(--color-accent);
-      color: white;
+      color: var(--color-on-accent);
       border-bottom-right-radius: 4px;
     }
 
     .message.assistant .message-content {
-      background: var(--color-accent-light);
+      background: var(--color-bg-elev);
       color: var(--color-text);
       border-bottom-left-radius: 4px;
     }
@@ -156,7 +158,7 @@
     .send-btn {
       padding: 12px 24px;
       background: var(--color-accent);
-      color: white;
+      color: var(--color-on-accent);
       border: none;
       border-radius: 8px;
       font-family: var(--font-sans);
@@ -167,7 +169,7 @@
     }
 
     .send-btn:hover:not(:disabled) {
-      background: #a84d2f;
+      background: var(--color-accent-strong);
     }
 
     .send-btn:disabled {
@@ -217,9 +219,9 @@
 
     /* Error message */
     .error-message {
-      background: #fef2f2;
-      border: 1px solid #fecaca;
-      color: #991b1b;
+      background: rgba(239, 68, 68, 0.12);
+      border: 1px solid rgba(239, 68, 68, 0.35);
+      color: #fca5a5;
       padding: var(--space-2) var(--space-3);
       border-radius: 8px;
       font-size: var(--text-sm);
@@ -229,7 +231,7 @@
     /* Responsive */
     @media (max-width: 640px) {
       .chat-container {
-        height: calc(100vh - 180px);
+        height: calc(100vh - 220px);
       }
 
       .message {
@@ -257,7 +259,9 @@
 </head>
 <body>
   <header class="site-header">
-    <nav>
+    <a href="index.html" class="wordmark">Jacob Rafiy</a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+    <nav id="site-nav" class="site-nav" aria-label="Main">
       <ul class="nav-list">
         <li><a href="index.html" class="nav-link">About</a></li>
         <li><a href="projects.html" class="nav-link">Projects</a></li>
@@ -480,5 +484,6 @@
     // Focus input on load
     chatInput.focus();
   </script>
+  <script src="js/site.js" defer></script>
 </body>
 </html>
